@@ -149,14 +149,13 @@ Cap a numeric option so that the total of this option and the size of another op
 
 #### `sum_cap`
 
-Cap a numeric option so that the total of this option and a set of other options does not exceed a fixed maximum capacity.
+Cap a set of numeric so that their sum does not exceed a fixed maximum capacity.
 
 ```yaml
-# sum of extra_items, base_items_1, and base_items_2 cannot exceed 20
-- option: extra_items # option to cap
-  sum_cap:
-      - base_items_1
-      - base_items_2
+# sum of base_items, and extra_items cannot exceed 20
+- sum_cap:
+      - base_items
+      - extra_items
   max_capacity: 20
 ```
 
